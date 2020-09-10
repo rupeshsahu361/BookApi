@@ -64,6 +64,8 @@ public class BookService {
 
     public String sellBook(Integer bookId) {
         Optional<Book> book = repository.findById(bookId);
+        if(Objects.isNull(book))
+            return ("Book Not found!!!");
         final String[] s = new String[1];
         book.ifPresent(b -> {
             if(b.getStock()==0) {

@@ -41,11 +41,6 @@ public class BookController {
         return bookService.deleteBookById(id);
     }
 
-    /*@PutMapping(value="/{id}")
-    public Optional<Book> updateBookById(@PathVariable("id") int id,@RequestBody BookUpdate bookUpdate){
-        return bookService.updateBookById(id, bookUpdate);
-    }*/
-
     @PutMapping(value="/{id}")
     public Optional<Book> updateBookById(@PathVariable("id") int id,
                                          @RequestParam(name = "title", required = false) String title,
